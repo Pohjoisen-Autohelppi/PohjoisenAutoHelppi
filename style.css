@@ -1,4 +1,6 @@
-```css
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 :root {
   --black: #080b09;
   --dark: #101612;
@@ -11,549 +13,369 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 85px;
 }
 
 body {
+  margin: 0;
   background: var(--black);
   color: var(--white);
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.7;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+h1, h2, h3 {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.2;
+  font-weight: 800;
 }
 
 /* NAVIGAATIO */
 
-.navbar {
-  width: 100%;
-  min-height: 72px;
-  padding: 16px 7%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  background: rgba(8, 11, 9, 0.96);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
+nav {
+  position: fixed;
   top: 0;
-  z-index: 100;
-  backdrop-filter: blur(12px);
-}
-
-.nav-logo {
-  font-family: "Manrope", sans-serif;
-  font-size: 21px;
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-.nav-logo span {
-  color: var(--green);
-}
-
-.nav-links {
+  left: 0;
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 30px;
+  padding: 16px 20px;
+  background: rgba(8, 11, 9, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
 }
 
-.nav-links a {
-  color: var(--muted);
+.menu {
+  display: flex;
+  gap: 42px;
+  align-items: center;
+  font-weight: 700;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
   font-size: 14px;
-  font-weight: 600;
-  transition: color 0.2s ease;
+  transition: 0.2s;
 }
 
-.nav-links a:hover {
+nav a:hover {
   color: var(--green);
 }
 
-/* ETUSIVUN HERO-OSIO */
+/* ETUSIVU */
 
 .hero {
-  min-height: 680px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px 80px;
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(48, 209, 88, 0.12),
-      transparent 65%
-    ),
-    linear-gradient(135deg, #080b09, #101a12);
+  min-height: 720px;
+  position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(48,209,88,0.15), transparent 55%),
+    linear-gradient(135deg, #080b09 0%, #111b14 55%, #080b09 100%);
+  border-bottom: 1px solid var(--border);
 }
 
 .overlay {
-  width: 100%;
-  max-width: 1000px;
+  min-height: 720px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 0;
-  padding-top: 45px;
+  padding: 125px 24px 80px;
 }
 
 .heroLogo {
-  display: block;
-  width: min(340px, 75%);
-  max-width: 340px;
+  max-width: 420px;
+  width: 85%;
   height: auto;
-  object-fit: contain;
-  margin: 0 auto 32px;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 10px 35px rgba(48,209,88,0.12));
 }
 
-.heroContent {
-  width: 100%;
-  max-width: 780px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.hero h1 {
+  font-size: clamp(36px, 6vw, 66px);
+  letter-spacing: -2px;
+  margin: 0 0 12px;
 }
 
-.eyebrow {
+.hero h2 {
   color: var(--green);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin-bottom: 14px;
+  font-size: clamp(19px, 3vw, 26px);
+  margin: 0 0 22px;
 }
 
-.heroContent h1 {
+.hero .overlay > p {
   max-width: 720px;
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(34px, 5vw, 52px);
-  line-height: 1.15;
-  letter-spacing: -1.5px;
-  margin: 0 0 20px;
-}
-
-.hero-description {
-  max-width: 620px;
   color: var(--muted);
   font-size: 17px;
   margin: 0 0 20px;
 }
 
-.heroContent .area {
+.hero .area {
   color: var(--green-light);
-  margin: 8px 0 28px;
-  letter-spacing: 1px;
-  font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 16px;
+  margin: 0 0 30px;
 }
 
-/* PAINIKKEET */
+/* SOITTOPAINIKE */
 
 .cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 30px;
-  min-height: 52px;
-  border-radius: 8px;
+  display: inline-block;
   background: var(--green);
   color: #061009;
-  font-size: 15px;
+  padding: 17px 36px;
+  border-radius: 8px;
+  text-decoration: none;
   font-weight: 800;
-  transition: 0.2s ease;
-  box-shadow: 0 8px 30px rgba(48, 209, 88, 0.15);
+  font-size: 16px;
+  box-shadow: 0 8px 30px rgba(48,209,88,0.2);
+  transition: 0.25s ease;
 }
 
 .cta:hover {
   background: var(--green-light);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(48, 209, 88, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(48,209,88,0.3);
 }
 
-.secondary-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 26px;
-  min-height: 52px;
-  border: 1px solid var(--green);
-  border-radius: 8px;
-  color: var(--green-light);
-  font-size: 14px;
-  font-weight: 700;
-  transition: 0.2s ease;
+/* OSIOT */
+
+section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 95px 28px;
 }
 
-.secondary-button:hover {
-  background: rgba(48, 209, 88, 0.1);
-  transform: translateY(-2px);
-}
-
-/* YLEISET OSIOT */
-
-.section {
-  padding: 100px 7%;
-}
-
-.section-heading {
-  max-width: 700px;
-  margin: 0 auto 50px;
+section h2 {
   text-align: center;
-}
-
-.section-heading h2,
-.contact-content h2 {
-  font-family: "Manrope", sans-serif;
   font-size: clamp(30px, 4vw, 42px);
-  line-height: 1.2;
-  margin-bottom: 16px;
+  margin: 0 0 48px;
   letter-spacing: -1px;
 }
 
-.section-heading > p:last-child {
-  color: var(--muted);
+section h2::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 4px;
+  background: var(--green);
+  border-radius: 5px;
+  margin: 18px auto 0;
 }
 
-/* PALVELUKORTIT */
-
-#palvelut {
-  background: var(--dark);
-}
+/* PALVELU- JA HINTAKORTIT */
 
 .grid {
-  max-width: 1200px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.service-card {
-  background: var(--card);
+article {
+  position: relative;
+  background: linear-gradient(145deg, #18221b, #101612);
+  padding: 28px 25px;
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 28px 23px;
-  min-height: 220px;
+  border-radius: 12px;
+  border-top: 3px solid var(--green);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+  font-weight: 600;
   transition: 0.25s ease;
 }
 
-.service-card:hover {
+article:hover {
   transform: translateY(-5px);
-  border-color: var(--green);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(48,209,88,0.5);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.3);
 }
 
-.card-icon {
-  font-size: 30px;
-  margin-bottom: 18px;
-}
-
-.service-card h3 {
-  font-family: "Manrope", sans-serif;
-  font-size: 17px;
-  line-height: 1.4;
-  margin-bottom: 12px;
-}
-
-.service-card p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* HINNASTO */
-
-.pricing-section {
-  background: var(--black);
-}
-
-.price-list {
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 10px 30px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-}
-
-.price-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 19px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.price-row:last-child {
-  border-bottom: none;
-}
-
-.price-row span {
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.price-row strong {
+article b {
+  display: inline-block;
   color: var(--green-light);
-  font-size: 16px;
-  text-align: right;
-  white-space: nowrap;
+  font-family: 'Manrope', sans-serif;
+  font-size: 23px;
+  margin-top: 9px;
 }
 
-.price-note {
-  max-width: 850px;
-  margin: 20px auto 0;
+article small {
   color: var(--muted);
-  font-size: 13px;
-  text-align: center;
+  font-weight: 400;
 }
 
-/* MIKSI MEIDÄT */
+/* MIKSI VALITA MEIDÄT */
 
 .reasons {
-  background: var(--dark);
-}
-
-.reason-grid {
-  max-width: 1100px;
+  max-width: 850px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.reason-item {
-  padding: 30px;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 14px;
+  overflow: hidden;
 }
 
-.reason-number {
-  display: block;
+.reason {
+  padding: 22px 28px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.reason::before {
+  content: "✓";
   color: var(--green);
-  font-family: "Manrope", sans-serif;
-  font-size: 30px;
   font-weight: 800;
-  margin-bottom: 18px;
+  margin-right: 14px;
 }
 
-.reason-item h3 {
-  font-family: "Manrope", sans-serif;
-  font-size: 19px;
-  margin-bottom: 10px;
+.reason + .reason {
+  border-top: 1px solid rgba(255,255,255,0.07);
 }
 
-.reason-item p {
-  color: var(--muted);
-  font-size: 14px;
+.reason:hover {
+  background: rgba(48,209,88,0.06);
+}
+
+/* HINNAT */
+
+#hinnat {
+  max-width: none;
+  background: #0c110e;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+#hinnat .grid {
+  max-width: 1124px;
+  margin: 0 auto;
 }
 
 /* YHTEYSTIEDOT */
 
-.contact-section {
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(48, 209, 88, 0.1),
-      transparent 70%
-    ),
-    var(--black);
-}
-
-.contact-content {
-  max-width: 800px;
-  margin: 0 auto;
+#yhteys {
+  max-width: none;
   text-align: center;
+  background:
+    radial-gradient(ellipse at center, rgba(48,209,88,0.09), transparent 65%),
+    var(--black);
+  padding: 90px 24px;
 }
 
-.contact-content > p:not(.eyebrow) {
-  max-width: 600px;
-  margin: 0 auto 30px;
+#yhteys h2 {
+  color: var(--white);
+}
+
+#yhteys p {
   color: var(--muted);
+  font-size: 17px;
+  line-height: 2.2;
 }
 
-.contact-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 45px;
+#yhteys strong {
+  color: var(--white);
+  font-size: 21px;
 }
 
-.contact-details {
-  max-width: 550px;
-  margin: 0 auto;
-  padding: 25px 30px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  text-align: left;
-}
-
-.contact-details p {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 14px;
-}
-
-.contact-details p:last-child {
-  border-bottom: none;
-}
-
-.contact-details span {
-  color: var(--muted);
-}
-
-.contact-details a {
+#yhteys a {
   color: var(--green-light);
-  text-align: right;
-  overflow-wrap: anywhere;
+  text-decoration: none;
 }
 
-.contact-details a:hover {
+#yhteys a:hover {
   text-decoration: underline;
 }
 
-/* ALATUNNISTE */
+/* ALAREUNA */
 
-.footer {
-  padding: 28px 7%;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
+footer {
+  text-align: center;
+  padding: 28px 20px;
   background: #050705;
   border-top: 1px solid var(--border);
-  color: var(--muted);
+  color: #849188;
   font-size: 13px;
 }
 
-/* MOBIILINÄKYMÄ */
+/* PUHELIMET JA TABLETIT */
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 
-  .reason-grid {
-    grid-template-columns: 1fr;
+  section {
+    padding: 70px 22px;
+  }
+
+  .menu {
+    gap: 25px;
   }
 }
 
-@media (max-width: 600px) {
-  .navbar {
-    padding: 14px 5%;
-    flex-direction: column;
-    gap: 10px;
+@media (max-width: 520px) {
+  nav {
+    padding: 14px 10px;
   }
 
-  .nav-links {
-    justify-content: center;
-    flex-wrap: wrap;
+  .menu {
     gap: 18px;
   }
 
-  .nav-links a {
+  nav a {
     font-size: 13px;
   }
 
-  .hero {
-    min-height: auto;
-    padding: 45px 20px 75px;
+  .hero,
+  .overlay {
+    min-height: 650px;
   }
 
   .overlay {
-    padding-top: 10px;
+    padding: 110px 20px 60px;
   }
 
   .heroLogo {
-    width: 70%;
-    max-width: 260px;
-    margin-bottom: 28px;
+    max-width: 300px;
   }
 
-  .heroContent h1 {
-    font-size: 34px;
-    letter-spacing: -0.8px;
+  .hero h1 {
+    letter-spacing: -1px;
   }
 
-  .hero-description {
+  .hero .overlay > p {
     font-size: 15px;
-  }
-
-  .section {
-    padding: 70px 6%;
-  }
-
-  .section-heading {
-    margin-bottom: 35px;
   }
 
   .grid {
     grid-template-columns: 1fr;
   }
 
-  .service-card {
-    min-height: auto;
+  article {
+    padding: 23px;
   }
 
-  .price-list {
-    padding: 8px 18px;
+  section {
+    padding: 60px 18px;
   }
 
-  .price-row {
-    gap: 12px;
-    padding: 16px 0;
+  section h2 {
+    margin-bottom: 35px;
   }
 
-  .price-row span {
-    font-size: 13px;
-  }
-
-  .price-row strong {
-    font-size: 14px;
-  }
-
-  .contact-details {
+  .reason {
     padding: 18px;
   }
 
-  .contact-details p {
-    flex-direction: column;
-    gap: 3px;
-  }
-
-  .contact-details a {
-    text-align: left;
-  }
-
-  .contact-buttons {
-    flex-direction: column;
-  }
-
-  .contact-buttons a {
-    width: 100%;
-  }
-
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  #yhteys p {
+    font-size: 15px;
+    overflow-wrap: anywhere;
   }
 }
-```
